@@ -4,7 +4,7 @@ public class Calculator {
 	}
 	
 	public void subtract(int x, int y) {
-		System.out.println(x - 1);
+		System.out.println(x - y);
 	}
 	
 	public void multiply(int x, int y) {
