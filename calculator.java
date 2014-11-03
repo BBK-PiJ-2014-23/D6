@@ -1,21 +1,21 @@
 class Calculator {
-	public int add(int x, int y) {
-		return 0;
+	public void add(int x, int y) {
+		println(x + y);
 	}
 	
-	public int subtract(int x, int y) {
-		return 0;
+	public void subtract(int x, int y) {
+		println(x - y);
 	}
 	
-	public int multiply(int x, int y) {
-		return 0;
+	public void multiply(int x, int y) {
+		println(x * y);
 	}
 	
-	public double divide(int x, int y) {
-		return 0;
+	public void	divide(int x, int y) {
+		println((double) x / (double) y);
 	}
 	
-	public int modulus(int x, int y) {
-		return 0;
+	public void modulus(int x, int y) {
+		println(x % y);
 	}
 }
