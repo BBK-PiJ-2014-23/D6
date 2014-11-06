@@ -1,6 +1,6 @@
 public class Matrix {
     int[][] matrix;
-    
+
     public Matrix(int rows, int columns) {
         matrix = new int[rows][columns];
         for (int i = 0; i < matrix.length; i++) {
@@ -9,13 +9,13 @@ public class Matrix {
             }
         }
     }
-    
+
     public void setElement(int x, int y, int value) {
         if (x < matrix.length && y < matrix[x].length) {
             matrix[x][y] = value;
         }
     }
-    
+
     public void setRow(int x, String values) {
         if (x < matrix.length && matrix[x].length == ((values.length() / 2) + 1)) {
             for (int i = 0; i < matrix[x].length; i++) {
@@ -23,7 +23,7 @@ public class Matrix {
             }
         }
     }
-    
+
     public void setColumn(int y, String values) {
         if (y < matrix[0].length && matrix.length == ((values.length() / 2) + 1)) {
             for (int i = 0; i < matrix.length; i++) {
@@ -31,7 +31,7 @@ public class Matrix {
             }
         }
     }
-    
+
     public String toString() {
         String str = "[";
         for (int i = 0; i < matrix.length; i++) {
@@ -47,7 +47,7 @@ public class Matrix {
         str += "]";
         return str;
     }
-    
+
     public void prettyPrint() {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -61,14 +61,37 @@ public class Matrix {
         }
         System.out.println();
     }
-    
+
     public boolean isSymmetrical() {
         MatrixChecker matrixChecker = new MatrixChecker();
         return matrixChecker.isSymmetrical(matrix);
     }
-    
+
     public boolean isTriangular() {
         MatrixChecker matrixChecker = new MatrixChecker();
         return matrixChecker.isTriangular(matrix);
     }
+
+    public void setMatrix(String values) {
+        String number = "";
+        int row = 0;
+        int column = 0;
+        for (int i = 0; i < values.length(); i++) {
+            if (values.charAt(i) == ',') {
+                setElement(row, column, Integer.parseInt(number));
+                column++;
+                number = "";
+            } else if (values.charAt(i) == ';') {
+                setElement(row, column, Integer.parseInt(number));
+                row++;
+                column = 0;
+                number = "";
+            } else if (i == values.length() - 1) {
+                number += values.substring(i, i + 1);
+                setElement(row, column, Integer.parseInt(number));
+            } else {
+                number += values.substring(i, i + 1);
+            }
+        }
+    }   
 }
