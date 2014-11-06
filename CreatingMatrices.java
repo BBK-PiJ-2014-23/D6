@@ -31,7 +31,29 @@ public class CreatingMatrices {
 		matrix.prettyPrint();
 		
 		System.out.print(matrix.toString());
+		System.out.println();
 		
+		Matrix matrix2 = new Matrix(3, 3);
+		matrix2.setElement(1, 0, 9);
+		matrix2.prettyPrint();
+		System.out.println("This matrix is symmetrical? " + matrix2.isSymmetrical());
+		System.out.println("This matrix is triangular? " + matrix2.isTriangular());
+		System.out.println();
+		
+		matrix2.setElement(1, 0, 1);
+		matrix2.prettyPrint();
+		System.out.println("This matrix is symmetrical? " + matrix2.isSymmetrical());
+		System.out.println("This matrix is triangular? " + matrix2.isTriangular());
+		System.out.println();
+		
+		
+		matrix2.setElement(0, 1, 0);
+		matrix2.setElement(0, 2, 0);
+		matrix2.setElement(1, 2, 0);
+		matrix2.prettyPrint();
+		System.out.println("This matrix is symmetrical? " + matrix2.isSymmetrical());
+		System.out.println("This matrix is triangular? " + matrix2.isTriangular());
+		System.out.println();
 		
 		
 		
