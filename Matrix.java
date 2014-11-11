@@ -1,5 +1,5 @@
 public class Matrix {
-    int[][] matrix;
+    private int[][] matrix;
 
     public Matrix(int rows, int columns) {
         matrix = new int[rows][columns];
